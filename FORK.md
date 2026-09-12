@@ -48,8 +48,8 @@
 ## 換一台電腦怎麼開發
 
 ```powershell
-git clone https://github.com/SanHsien/git-worktree-demo.git
-cd git-worktree-demo
+git clone https://github.com/SanHsien/salespilot-crm.git
+cd salespilot-crm
 # `gh repo clone` 已會加上 `upstream` remote；若沒有：
 # git remote add upstream https://github.com/deancourse/git-worktree-demo.git
 pwsh -NoProfile -File tools\bootstrap_dev.ps1

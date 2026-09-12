@@ -20,7 +20,7 @@ git rev-parse HEAD
 → cb539426d2c807e0a3866827a69e485dceceee1e
 
 gh repo set-default --view
-→ SanHsien/git-worktree-demo
+→ SanHsien/salespilot-crm
 ```
 
 實查結果：
@@ -52,4 +52,4 @@ gh repo set-default --view
 
 ## 尚未宣稱範圍
 
-- **不宣稱** 已將任何修改提交回原作者上游（依 fork 維護政策，所有 PR/commit 僅限於 `SanHsien/git-worktree-demo`）。
+- **不宣稱** 已將任何修改提交回原作者上游（依 fork 維護政策，所有 PR/commit 僅限於 `SanHsien/salespilot-crm`）。

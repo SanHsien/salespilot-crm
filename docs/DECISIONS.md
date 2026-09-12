@@ -10,16 +10,21 @@
 
 - 不把 fork 包裝成原創專案，不移除原作者 dean 與官方連結。
 - 上游更新必須逐筆審查。
-- PR、push、release 一律指向 `SanHsien/git-worktree-demo`。
+- PR、push、release 一律指向 `SanHsien/salespilot-crm`。
 
-## 2026-09-12：專案命名評估與決策（ADR-0001）
+## 2026-09-12：專案命名改為 SalesPilot CRM（ADR-0001 修訂）
 
-**決定**：GitHub Repository 名稱維持 `git-worktree-demo`，並在 README 標題、GitHub Description 與文檔全面突出 `SalesPilot CRM` 與 `Git Worktree 代理協作` 雙重定位。
+**決定**：GitHub Repository 名稱與本機專案目錄正式命名為 `salespilot-crm`，`package.json` 的 `name` 設為 `salespilot-crm`。
 
-**理由**：
-1. **上游 1:1 追蹤不失真**：GitHub 上的 fork 與上游 `deancourse/git-worktree-demo` 保持同名，使自動化上游檢測工具、git remote fetch 與未來 sync 毫無阻抗。
-2. **與 SanHsien 體系規範一致**：SanHsien 所有 fork（如 `markitdown`、`hung-yi-lee-skill`、`khoj`、`opencodex`）一律保持與母 repo 同名。
-3. **反映本質價值**：此專案真正具備教學與重複使用價值的是 Git Worktree 與 Agent 協作工作流（`git-worktree-design`、`git-smart-commit`、`git-pr-description`），SalesPilot CRM 則是該工作流之示範載體。
+**理由與維護者指示**：
+- **實質內容優先於上游名詞**：專案內容實質上是 SalesPilot CRM 官網首頁與相關代理協作套件，專案名稱應優先貼近專案實質內容，而非受限於上游的教學 demo 命名（`git-worktree-demo`）。
+- **當初考量與糾正教訓**：AI 當初提議保留 `git-worktree-demo` 是為了迎合全自動化工具鏈的 1:1 對稱與過去 fork 慣性；但維護者明確指示「符合專案內容更重要」。命名為 `salespilot-crm` 能更清晰地代表專案功能與品牌價值，且上游追蹤工具（`tools/upstream_baseline.json`）具備完整 `repo` URL 支援，名稱不對稱完全不影響未審查提交追蹤。
+
+**配套調整**：
+1. GitHub Repository 正式更名為 `SanHsien/salespilot-crm`。
+2. 本地工作目錄更名為 `C:\Users\SanHsien\OneDrive\文件\GitHub\salespilot-crm`。
+3. `origin` remote 指向 `https://github.com/SanHsien/salespilot-crm.git`。
+4. 機械硬閘門更新：`gh repo set-default SanHsien/salespilot-crm`。
 
 ## 2026-09-12：上游 pycache 清理與依賴建置授權（ADR-0002）
 

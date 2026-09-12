@@ -1,19 +1,19 @@
 ---
-description: PR、push、release 一律指向 SanHsien/git-worktree-demo；回貢上游需要當次對話明確同意
+description: PR、push、release 一律指向 SanHsien/salespilot-crm；回貢上游需要當次對話明確同意
 alwaysApply: true
 ---
 
 # 對外只打本 fork
 
 本 repo fork 自 [`deancourse/git-worktree-demo`](https://github.com/deancourse/git-worktree-demo)（MIT）。
-PR、push、release 一律指向 `SanHsien/git-worktree-demo`。
+PR、push、release 一律指向 `SanHsien/salespilot-crm`。
 
 **根因是機制不是粗心：** `gh` 在 fork clone 的預設 repo 就是上游，裸跑 `gh pr create` 必然打上去。
 
 ```powershell
-gh repo set-default SanHsien/git-worktree-demo    # 每個 clone 先跑一次
-gh repo set-default --view                       # 必須回 SanHsien/git-worktree-demo
-gh pr create --repo SanHsien/git-worktree-demo --base master --head <分支>
+gh repo set-default SanHsien/salespilot-crm          # 每個 clone 先跑一次
+gh repo set-default --view                           # 必須回 SanHsien/salespilot-crm
+gh pr create --repo SanHsien/salespilot-crm --base master --head <分支>
 ```
 
 建完**讀輸出的 URL**，owner 必須是 `SanHsien`。不是就立刻 `gh pr close` 留言道歉說明開錯 repo，

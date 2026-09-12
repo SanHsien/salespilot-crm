@@ -1,6 +1,6 @@
 # NOTICE
 
-git-worktree-demo (SanHsien maintenance fork)
+salespilot-crm (SanHsien maintenance fork)
 Copyright 2026 SanHsien
 
 This project is derived from [`deancourse/git-worktree-demo`](https://github.com/deancourse/git-worktree-demo), originally licensed under the MIT License.

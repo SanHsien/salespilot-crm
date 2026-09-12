@@ -7,7 +7,7 @@
 ## 私下回報
 
 若發現針對本 fork 維護骨架或衍生程式的安全漏洞，請使用 GitHub Security Advisories 的 **Report a vulnerability** 私下回報：
-<https://github.com/SanHsien/git-worktree-demo/security/advisories/new>。
+<https://github.com/SanHsien/salespilot-crm/security/advisories/new>。
 若該入口不可用，請透過 GitHub 個人檔案聯絡維護者，不要先建立公開 Issue。
 
 若問題屬於上游核心邏輯，亦可向原作者 dean 通報。

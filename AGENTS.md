@@ -7,7 +7,7 @@
 這是 [`deancourse/git-worktree-demo`](https://github.com/deancourse/git-worktree-demo) 的 MIT License fork。
 核心價值是作為 Git Worktree 多分支代理協作示範平台，內建 React 18 + Vite 6 SalesPilot CRM 官網應用，以及 `.agent/skills/` 與 `.agent/workflows/` 代理技能庫。
 
-`origin` 是 `SanHsien/git-worktree-demo`（預設分支 `master`），`upstream` 是原作者 repo（預設分支 `master`）。
+`origin` 是 `SanHsien/salespilot-crm`（預設分支 `master`），`upstream` 是原作者 repo（預設分支 `master`）。
 保留上游作者、MIT License 與產品程式。本 fork 的維護差異記在 [`FORK.md`](FORK.md) 與 [`docs/DECISIONS.md`](docs/DECISIONS.md)。
 
 主要開發與完整驗收環境是 **Windows 11 + PowerShell**。本 fork 為純 Windows 維護線，所有測試與工作流程均在 Windows 原生環境執行。

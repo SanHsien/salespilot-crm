@@ -7,4 +7,4 @@
 - 提交前跑 `pwsh -NoProfile -File tools\dev_check.ps1`。
 - 測試檔案、使用者專有文件、`.env` 一律不可提交。
 - 使用繁體中文，直接交付可驗證結果，避免冗長背景鋪陳。
-- PR、push、release 一律指向 `SanHsien/git-worktree-demo`，嚴禁未經當次許可打向 `deancourse/git-worktree-demo`。
+- PR、push、release 一律指向 `SanHsien/salespilot-crm`，嚴禁未經當次許可打向 `deancourse/git-worktree-demo`。

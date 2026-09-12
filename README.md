@@ -57,7 +57,7 @@ pwsh -NoProfile -File tools\test_product.ps1
 ## 🛠️ 維護與品質標準
 
 本 fork 建立於 Windows 11 原生環境，實施以下維護機制：
-- **預設 Repo 閘門**：`gh repo set-default SanHsien/git-worktree-demo`，杜絕意外向 upstream 發 PR。
+- **預設 Repo 閘門**：`gh repo set-default SanHsien/salespilot-crm`，杜絕意外向 upstream 發 PR。
 - **純 Windows 原生 CI**：在 `windows-latest` 上跨 Python 3.10~3.14 矩陣與 Node.js 執行門禁。
 - **上游增量水位追蹤**：逐筆審核 upstream commit、PR 與 issue。
 - **依賴新鮮度監控**：每月排程比對最新版本。
