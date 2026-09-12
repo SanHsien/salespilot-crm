@@ -28,3 +28,18 @@ npm-debug.log*
 
 # Agent reference spec
 git-worktree-spec.md
+
+# Python artifacts & environment
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+.pytest_cache/
+.ruff_cache/
+
+# Generated maintenance reports
+upstream-review-report.md
+dependency-freshness-report.md
+
