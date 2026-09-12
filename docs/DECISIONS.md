@@ -33,13 +33,19 @@
 2. 建立 `pnpm-workspace.yaml` 明確設定 `allowBuilds: esbuild: true`，消除 Windows 11 原生 pnpm 12 互動式授權卡頓。
 3. 修正 `.agent/skills/ui-ux-pro-max/scripts/` 中的 Ruff 靜態分析警告（未使用變數與多餘 f-string），確保代碼整潔。
 
-## 2026-09-12：上游分支、PR 與 Issue 首次盤點結論
+## 2026-09-12：上游分支、PR 與 Issue 盤點與引進決策（ADR-0003）
 
 **決定**：
-1. **上游分支**：`upstream/master` 與示範分支 `upstream/feature/landing-page-enhancements`。本 fork 唯一長期跟隨分支為 `upstream/master`。
-2. **上游 PR（共 11 筆）**：
-   - `#1` OPEN：作者自身提交的 landing-page-enhancements PR（i18n、主題切換等示範 feature）。
-   - `#2`~`#26` OPEN：學員／社群提交的各項練習 PR。
-   - 由於 upstream 尚未合併任一 PR 進 master，且為教學練習展示，本 fork 維護線維持 master 為基準。
-3. **上游 Issue**：共 0 筆。
-4. **水位鎖定**：`tools/upstream_baseline.json` 鎖定 Commit `cb539426d2c807e0a3866827a69e485dceceee1e`、PR 水位 `26`、Issue 水位 `0`。
+1. **引進上游 PR #1（feature/landing-page-enhancements）**：
+   - 上游分支 `feature/landing-page-enhancements`（Commit `6ad338e`）為作者 Dean Lin 示範 Git Worktree 多特性協作的完整功能集合（包含多語系 i18n、深淺主題切換、FAQ 問答手風琴、年繳月繳定價切換、Loading 載入頁、Cookie 同意橫幅）。
+   - 本 fork 將其審查後完整引進，並針對程式碼進行 8 項品質與安全性加固。
+2. **修復上游 PR #1 缺陷與無障礙體驗提升**：
+   - **FAQ 點擊劫持修復**：上游將 `onClick` 置於 `.faq-item`，使用者選取解答文字時會導致突發摺疊；改為在 `<button type="button" className="faq-question">` 觸發，並補齊 `aria-expanded`、`aria-controls`、`role="region"` 與錨點 `id="faq"`。
+   - **I18n 假值判定與儲存異常防護**：上游 `t()` 函式使用 `if (!value) return key;`，遇空字串或 0 會誤退 key；改為嚴格 null/undefined 判定與多層 fallback，同步 `document.documentElement.lang`，並為 `localStorage` 加上 `try/catch`。
+   - **定價副標題文案語意修正**：上游在 `Pricing.jsx` 誤用 `{t('faq.a1')}`；新增 `pricing.subtitle` 語系欄位，使文案與架構解耦。
+   - **導覽列與按鈕無障礙補齊**：新增 FAQ 導覽列連結，主題與語系切換按鈕補足完整 `aria-label` 與 `title`。
+   - **Cookie 同意與載入體驗強化**：Cookie 同意橫幅加上 `role="region"` 與安全儲存；載入延遲縮短至 600ms，消除冗餘等待。
+3. **上游其餘 PR 處理（PR #2 ~ #26）**：
+   - 經逐一查驗，PR `#2`~`#26` 皆為學員演練之練習 PR，其功能均屬 PR `#1` 之子集，且 upstream 尚未合併。本 fork 已透過 PR `#1` 的完整引進與加固涵蓋全部特性，其餘練習 PR 記錄保留於 `docs/UPSTREAM.md`，不重複引進。
+4. **上游 Issue**：共 0 筆。
+5. **版本標籤策略**：貫徹「只保留最新 tag」原則，發布 `v1.0.0` 正式標籤，清理並確保無殘留冗餘標籤。

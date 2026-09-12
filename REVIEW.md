@@ -43,6 +43,12 @@ gh repo set-default --view
 | R-08 | P2 | 建立獨立維護測試目錄 `tools/tests/` 與獨立 `tools/pytest.ini`，配置合約測試 |
 | R-09 | P2 | 建立純 Windows 原生 CI（`ci.yml`、`codeql.yml`、`upstream-check.yml`、`dependency-freshness.yml`） |
 | R-10 | P2 | 建立上游追蹤水位防重複巡檢機制，鎖定 PR `#26`、Issue `#0` |
+| R-11 | P1 | 修復 FAQ 展開折疊點擊事件劫持問題，限定 `<button>` 點擊並補齊 WAI-ARIA 屬性與錨點 |
+| R-12 | P2 | 修復 I18nContext 假值（空字串/0）判定錯誤、多層 fallback 與私密模式 localStorage 異常防護 |
+| R-13 | P2 | 修復 Pricing.jsx 誤用 `{t('faq.a1')}` 當定價副標題之文案缺陷，新增 `pricing.subtitle` |
+| R-14 | P2 | 強化導覽列與操作按鈕（主題切換、語系切換）之無障礙（aria-label、title、role）屬性 |
+| R-15 | P2 | 增強 CookieConsent 與 Loading 體驗，防止私密儲存報錯並調整延遲為流暢 600ms |
+| R-16 | P2 | 審查並引進上游 PR `#1`（Commit `6ad338e`），涵蓋多語系、主題、QA、年月付方案切換 |
 
 ## 接受、不改契約
 
