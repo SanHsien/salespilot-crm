@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Upstream Issues
+    url: https://github.com/deancourse/git-worktree-demo/issues
+    about: 原作者上游的問題回報請至原專案
