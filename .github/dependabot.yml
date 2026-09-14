@@ -17,3 +17,10 @@ updates:
     schedule:
       interval: "monthly"
     open-pull-requests-limit: 5
+    groups:
+      # init 與 analyze 必須跑同一個版本。拆成兩個 PR 各升一半時，CodeQL 會以
+      # 「Loaded a configuration file for version X, but running version Y」失敗，
+      # 兩個 PR 同時紅燈而且誰都不能先合（2026-09-14 的 #7／#8 就是這樣）。
+      codeql-action:
+        patterns:
+          - "github/codeql-action*"
