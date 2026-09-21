@@ -14,7 +14,7 @@
 
 ## 硬性邊界
 
-- 不提交使用者輸入檔案、專有文件、API key、token、私鑰或 `.env`。
+- 不提交使用者輸入檔案、專有文件、API key、token、私鑰或 `.env`。也不提交暫時性測試檔案（`tools/tests/` 維護契約測試除外）。
 - 不推送到 `upstream`。上游同步先跑 `python tools/check_upstream_updates.py`，逐筆審查後再 merge / cherry-pick；不盲目覆蓋 fork 文件與 Windows gate。
 - 不要把維護 gate 改成非 Windows 環境。維護環境（`requirements-dev.txt`）僅安裝 pytest 與 ruff。
 - 不把 fork 包裝成原創產品，不移除上游作者 dean 或官方連結。
@@ -32,7 +32,7 @@
 - 一般變更直接推 `origin/master`，不開短期功能分支、不開維護 PR。只有在需要他人審查、或改動風險高到值得先讓 CI 在 PR 上跑一輪時，才退回 **branch → PR → CI → merge**。
 - 修 bug 先補可重現失敗測試，再做最小修正。
 - 不為了套格式而大改上游程式；Ruff 只閘維護工具與腳本的 E9（語法）與 F（pyflakes）。
-- 使用繁體中文回覆；使用者文件以繁中為主，公開入口同步維護 [`README.en.md`](README.en.md)。
+- 使用繁體中文回覆；使用者文件以繁中為主，公開入口同步維護 [`README.en.md`](README.en.md)。回覆直接交付可驗證結果，避免冗長背景鋪陳。
 - 提交訊息用 Conventional Commit。Dependabot 或外部 fork 的變更走 PR，讀 diff 並通過 CI 後再合併。
 - `REVIEW.md` 是風險快照，不是每個一般 bug 的流水帳。
 - 不 force-push `master`，不刪 `upstream` remote。
@@ -47,3 +47,9 @@
 6. 採用／略過寫進 [`docs/DECISIONS.md`](docs/DECISIONS.md)，驗證後才推進 `tools/upstream_baseline.json`
 
 Baseline 代表「已審查」，不代表「全部已合併」。
+
+## 對外邊界：PR 只打本 fork
+
+- **PR、push、release 一律指向 `SanHsien/salespilot-crm`。** 對上游 `deancourse/git-worktree-demo` 開 PR、push 或發 release，需要維護者在當次對話明確同意回貢；「fork 一份」「建開發環境」「比照其他 repo」都不是同意。
+- `gh` 在 fork clone 的預設 repo 可能是上游，每個 clone 先跑一次 `gh repo set-default SanHsien/salespilot-crm`。
+- 開 PR 仍明寫 `gh pr create --repo SanHsien/salespilot-crm --base <分支> --head <分支>`，並讀輸出的 URL，owner 必須是 `SanHsien`。
