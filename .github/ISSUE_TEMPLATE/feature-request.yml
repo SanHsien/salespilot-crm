@@ -1,0 +1,11 @@
+name: 功能建議
+description: 建議改進 Windows 維護骨架、CI 或自動化工具
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: proposal
+    attributes:
+      label: 建議內容
+      description: 你希望增加或改進什麼？
+    validations:
+      required: true

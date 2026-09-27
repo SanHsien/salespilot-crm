@@ -1,0 +1,36 @@
+name: Bug 回報
+description: 回報 Windows 維護骨架、開發門禁或相容性問題
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感謝回報！請確認問題屬於本 fork 的 Windows 維護環境。
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: 問題描述
+      description: 發生了什麼事？
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: 重現步驟
+      description: 執行了哪些指令？
+      placeholder: |
+        1. pwsh -NoProfile -File tools\dev_check.ps1
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: 環境資訊
+      description: OS 版本、PowerShell 版本、Python/Node 版本
+      value: |
+        - OS: Windows 11
+        - PowerShell: 7.x
+        - Python: 3.1x
+        - Node: 22.x / pnpm: 12.x
+    validations:
+      required: true

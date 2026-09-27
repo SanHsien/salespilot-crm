@@ -1,0 +1,76 @@
+name: Dependency freshness
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - requirements-dev.txt
+      - package.json
+      - tools/check_dependency_freshness.py
+      - .github/dependabot.yml
+      - .github/workflows/dependency-freshness.yml
+  schedule:
+    - cron: "0 3 1 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: read
+
+concurrency:
+  group: dependency-freshness
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: windows-latest
+    timeout-minutes: 10
+    defaults:
+      run:
+        shell: pwsh
+    env:
+      PYTHONUTF8: "1"
+      PYTHONIOENCODING: "utf-8"
+
+    steps:
+      - name: Check out master
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: master
+          persist-credentials: false
+
+      - name: Set up Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.14"
+
+      - name: Check declared dependency ranges
+        id: deps
+        run: |
+          python tools/check_dependency_freshness.py --github-output --output dependency-freshness-report.md
+
+      - name: Include open Dependabot pull requests
+        id: tracker
+        env:
+          GH_TOKEN: ${{ github.token }}
+          CHECKER_NEEDS_ATTENTION: ${{ steps.deps.outputs.needs_attention }}
+        run: |
+          $openPrs = gh pr list --state open --author "app/dependabot" --json number,title,url | ConvertFrom-Json
+          Add-Content -Path dependency-freshness-report.md -Value "`n## Open Dependabot pull requests`n" -Encoding utf8
+          $needsAttention = $env:CHECKER_NEEDS_ATTENTION
+          if ($openPrs.Count -eq 0) {
+              Add-Content -Path dependency-freshness-report.md -Value "- None" -Encoding utf8
+          } else {
+              foreach ($pr in $openPrs) {
+                  Add-Content -Path dependency-freshness-report.md -Value "- [#$($pr.number) $($pr.title)]($($pr.url))" -Encoding utf8
+              }
+              $needsAttention = "true"
+          }
+          "needs_attention=$needsAttention" | Out-File -FilePath $env:GITHUB_OUTPUT -Append -Encoding utf8
+          Get-Content dependency-freshness-report.md | Out-File -FilePath $env:GITHUB_STEP_SUMMARY -Append -Encoding utf8
+
+      - name: Mark maintenance as required
+        if: steps.tracker.outputs.needs_attention == 'true'
+        run: |
+          Write-Error "Dependency maintenance is required. See the workflow summary and Dependabot pull requests."
+          exit 1
