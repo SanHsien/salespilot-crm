@@ -38,8 +38,8 @@
 
 ## 分支與 remote
 
-- `origin/master`：SanHsien 維護線，也是唯一長期分支。
-- 日常修改在本機跑 gate 後直接推 `origin/master`。
+- `origin/main`：SanHsien 維護線，也是唯一長期分支。
+- 日常修改在本機跑 gate 後直接推 `origin/main`。
 - `upstream/master`：deancourse 原始專案，只追蹤、不推送。
 - Dependabot 或外部 fork 的變更走 PR，讀 diff 並通過 CI 後再合併。
 
