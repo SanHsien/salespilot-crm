@@ -2,9 +2,9 @@
 
 ## Remote
 
-- Fork：`origin` → `https://github.com/SanHsien/salespilot-crm.git`（預設分支 `master`）
+- Fork：`origin` → `https://github.com/SanHsien/salespilot-crm.git`（預設分支 `main`）
 - 原作者：`upstream` → `https://github.com/deancourse/git-worktree-demo.git`（預設分支 `master`）
-- 追蹤分支：`master`
+- 上游追蹤分支：`upstream/master`
 
 ## 檢查新提交
 
