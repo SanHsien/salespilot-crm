@@ -4,6 +4,8 @@
 
 GitHub 上本 fork 已只保留 `main`；原作者仍使用 `master`。同步更新 Windows CI、CodeQL、依賴新鮮度與上游檢查的觸發分支，並讓依賴新鮮度工作流程明確檢出 `main`。2026-09-12 建庫時沿用 `master` 的紀錄保留如下。
 
+同日 Ruff 維護工具最低版經 PR #11 升至 0.16.9，Windows CI 通過。PyPI 隨後推出 0.16.10；它已落在 `>=0.16.9` 的允許範圍內。依賴新鮮度檢查將 0.16.10 記為一次延後審查，待下一版再檢視最低版，避免把最低版當成消除警報的數字。
+
 ## 2026-09-12：建立 Windows-first 維護型 fork
 
 **決定**：fork `deancourse/git-worktree-demo`，保留 MIT License 與完整歷史。本線預設分支沿用 `master`。本線聚焦繁中文件、雙重專案定位標注、Windows 開發 gate、Windows CI，以及逐筆審查的上游追蹤。

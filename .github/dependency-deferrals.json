@@ -1,3 +1,8 @@
 {
-  "deferrals": {}
+  "deferrals": {
+    "ruff": {
+      "deferredLatest": "0.16.10",
+      "reason": "The just-reviewed >=0.16.9 floor is a compatibility promise; 0.16.10 is already allowed by this range. Review the next Ruff release separately with the Windows gate before raising the floor again."
+    }
+  }
 }

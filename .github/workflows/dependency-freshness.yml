@@ -8,6 +8,7 @@ on:
       - package.json
       - tools/check_dependency_freshness.py
       - .github/dependabot.yml
+      - .github/dependency-deferrals.json
       - .github/workflows/dependency-freshness.yml
   schedule:
     - cron: "0 3 1 * *"
