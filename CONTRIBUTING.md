@@ -5,7 +5,7 @@
 ## 開始前
 
 1. 先讀 [`AGENTS.md`](AGENTS.md)、[`FORK.md`](FORK.md) 與 [`README.md`](README.md)。
-2. 確認問題在最新 `master` 仍可重現，並查過既有 Issues 與 PR。
+2. 確認問題在最新 `main` 仍可重現，並查過既有 Issues 與 PR。
 3. 產品核心行為的實質變更，優先考慮回報或回貢 [`deancourse/git-worktree-demo`](https://github.com/deancourse/git-worktree-demo)。
 4. 不要附上真實使用者個資、專有文件、未經授權的檔案或任何憑證。
 
@@ -19,7 +19,7 @@ pwsh -NoProfile -File tools\bootstrap_dev.ps1
 
 ## 提交方式
 
-本 fork 由維護者直接推 `master`，不開短期分支。改完先跑上面的 Windows gate。
+本 fork 由維護者直接推 `main`，不開短期分支。改完先跑上面的 Windows gate。
 
 - 一次提交聚焦一個問題。
 - Bug 修正先附失敗測試；新行為需涵蓋成功、邊界與錯誤路徑。
