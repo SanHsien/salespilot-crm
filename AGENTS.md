@@ -7,7 +7,7 @@
 這是 [`deancourse/git-worktree-demo`](https://github.com/deancourse/git-worktree-demo) 的 MIT License fork。
 核心價值是作為 Git Worktree 多分支代理協作示範平台，內建 React 18 + Vite 6 SalesPilot CRM 官網應用，以及 `.agent/skills/` 與 `.agent/workflows/` 代理技能庫。
 
-`origin` 是 `SanHsien/salespilot-crm`（預設分支 `master`），`upstream` 是原作者 repo（預設分支 `master`）。
+`origin` 是 `SanHsien/salespilot-crm`（預設分支 `main`），`upstream` 是原作者 repo（預設分支 `master`）。
 保留上游作者、MIT License 與產品程式。本 fork 的維護差異記在 [`FORK.md`](FORK.md) 與 [`docs/DECISIONS.md`](docs/DECISIONS.md)。
 
 主要開發與完整驗收環境是 **Windows 11 + PowerShell**。本 fork 為純 Windows 維護線，所有測試與工作流程均在 Windows 原生環境執行。
@@ -29,13 +29,13 @@
 
 ## 開發原則
 
-- 一般變更直接推 `origin/master`，不開短期功能分支、不開維護 PR。只有在需要他人審查、或改動風險高到值得先讓 CI 在 PR 上跑一輪時，才退回 **branch → PR → CI → merge**。
+- 一般變更直接推 `origin/main`，不開短期功能分支、不開維護 PR。只有在需要他人審查、或改動風險高到值得先讓 CI 在 PR 上跑一輪時，才退回 **branch → PR → CI → merge**。
 - 修 bug 先補可重現失敗測試，再做最小修正。
 - 不為了套格式而大改上游程式；Ruff 只閘維護工具與腳本的 E9（語法）與 F（pyflakes）。
 - 使用繁體中文回覆；使用者文件以繁中為主，公開入口同步維護 [`README.en.md`](README.en.md)。回覆直接交付可驗證結果，避免冗長背景鋪陳。
 - 提交訊息用 Conventional Commit。Dependabot 或外部 fork 的變更走 PR，讀 diff 並通過 CI 後再合併。
 - `REVIEW.md` 是風險快照，不是每個一般 bug 的流水帳。
-- 不 force-push `master`，不刪 `upstream` remote。
+- 不 force-push `main`，不刪 `upstream` remote。
 
 ## 上游處理
 

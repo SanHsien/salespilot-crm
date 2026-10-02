@@ -1,5 +1,9 @@
 # 維護決策
 
+## 2026-10-02：fork 預設分支改為 main
+
+GitHub 上本 fork 已只保留 `main`；原作者仍使用 `master`。同步更新 Windows CI、CodeQL、依賴新鮮度與上游檢查的觸發分支，並讓依賴新鮮度工作流程明確檢出 `main`。2026-09-12 建庫時沿用 `master` 的紀錄保留如下。
+
 ## 2026-09-12：建立 Windows-first 維護型 fork
 
 **決定**：fork `deancourse/git-worktree-demo`，保留 MIT License 與完整歷史。本線預設分支沿用 `master`。本線聚焦繁中文件、雙重專案定位標注、Windows 開發 gate、Windows CI，以及逐筆審查的上游追蹤。
