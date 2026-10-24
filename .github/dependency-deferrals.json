@@ -1,3 +1,8 @@
 {
-  "deferrals": {}
+  "deferrals": {
+    "ruff": {
+      "deferredLatest": "0.17.2",
+      "reason": "Ruff 0.17.2 has been reviewed: on Windows with Python 3.10-3.14, ruff E9/F, compileall and pytest (26 passed) all pass, and the existing >=0.16.9 range already allows installing 0.17.2. The floor is deliberately not raised, so that it is not used just to clear the freshness warning."
+    }
+  }
 }

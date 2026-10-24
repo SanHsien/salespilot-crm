@@ -1,8 +1,8 @@
 # 維護決策
 
-## 2026-10-24：Ruff 維護工具最低版升至 0.17.2
+## 2026-10-24：Ruff 0.17.2 已審查，記錄延後、不提高下限
 
-依賴新鮮度在 `main` 轉紅：PyPI 推出 Ruff 0.17.2，已越過 0.16.10 延後審查，延後自動失效。依 2026-10-02 的紀錄另開一筆單獨審查：Ruff 0.17.2 要求 Python `>=3.7`，涵蓋 CI 的 3.10–3.14；以 0.17.2 跑維護 gate 的 `ruff check --select E9,F --target-version py310`、`compileall`、`pytest`、相對連結檢查皆通過，無新增警告。`requirements-dev.txt` 最低版升至 `>=0.17.2`，移除已失效的 0.16.10 延後項。Windows CI 於 PR 上驗收。
+依賴新鮮度在 `main` 轉紅：PyPI 推出 Ruff 0.17.2，已越過 0.16.10 延後審查，延後自動失效。依 2026-10-02 的紀錄另開一筆單獨審查：Windows、Python 3.10–3.14 以 0.17.2 跑 `ruff check --select E9,F`、`compileall`、`pytest`（26 passed）皆通過，且現有 `ruff>=0.16.9` 範圍本來就允許安裝 0.17.2。結論：`requirements-dev.txt` 維持 `>=0.16.9`，不提高下限（下限是相容性承諾，不拿來消除警報）；在 `.github/dependency-deferrals.json` 將 ruff 的 `deferredLatest` 更新為 `0.17.2` 並寫明理由。下一個 Ruff 版本再單獨審查。
 
 ## 2026-10-24：vite 與 source-map-js 安全修補
 
