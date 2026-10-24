@@ -4,7 +4,7 @@
 
 Dependabot #19–#21（vite，`pnpm-lock.yaml`，launch-editor 三筆，修補版 8.3.3）：vite 8.3.1 → 8.3.5，`package.json` 範圍同步為 `^8.3.5`；此舉同時涵蓋 Dependabot PR #14（8.3.1 → 8.3.3，保留開啟、不關閉）。`pnpm audit` 另列 postcss 的傳遞依賴 `source-map-js` 1.2.1（high，修補版 1.2.2），隨 lock 更新到 1.2.2，不新增 override。兩者都是真實安裝的 registry 套件，沒有 parent 自帶 bundle 的情形。
 
-驗收：`pnpm audit` 由 1 low／4 moderate／2 high 降為 0；`tools\dev_check.ps1` 與 `tools	est_product.ps1`（`pnpm build`）通過。
+驗收：`pnpm audit` 由 1 low／4 moderate／2 high 降為 0；`tools\dev_check.ps1` 與 `tools\test_product.ps1`（`pnpm build`）通過。
 
 ## 2026-10-02：fork 預設分支改為 main
 
