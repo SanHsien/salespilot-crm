@@ -20,7 +20,7 @@
 |---|---|
 | `README.md` | 繁中主檔；加入 fork 維護資訊、雙重定位說明與快速入口 |
 | `README.en.md` | 原始上游說明保留 |
-| `AGENTS.md` / `CLAUDE.md` / `GEMINI.md` | 本 fork 的 AI 維護單一真相源 |
+| `AGENTS.md` / `CLAUDE.md` | 本 fork 的 AI 維護單一真相源 |
 | `NOTICE.md` / `FORK.md` / `LICENSE` | 來源、授權與同步說明 |
 | `tools/dev_check.ps1` | Windows 本機一鍵 gate（compile / ruff / pytest / check_links / vite build） |
 | `tools/bootstrap_dev.ps1` | Windows 本機一鍵初始化與驗收（Python venv + pnpm install） |

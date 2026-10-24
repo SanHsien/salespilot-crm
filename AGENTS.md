@@ -21,6 +21,7 @@
 
 ## 技術與資料流
 
+- 核心程式在 `src/`、代理技能在 `.agent/`，以上游為準。
 - 前端架構：`src/`（React 18 + Vite 6，SalesPilot CRM 官網）。
 - 代理技能庫：`.agent/skills/`（`git-worktree-design`、`git-smart-commit`、`git-pr-description`、`skill-development`、`ui-ux-pro-max`）。
 - 代理工作流：`.agent/workflows/exec-worktree-spec.md`。
