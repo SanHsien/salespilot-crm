@@ -1,5 +1,9 @@
 # 維護決策
 
+## 2026-10-24：Ruff 維護工具最低版升至 0.17.2
+
+依賴新鮮度在 `main` 轉紅：PyPI 推出 Ruff 0.17.2，已越過 0.16.10 延後審查，延後自動失效。依 2026-10-02 的紀錄另開一筆單獨審查：Ruff 0.17.2 要求 Python `>=3.7`，涵蓋 CI 的 3.10–3.14；以 0.17.2 跑維護 gate 的 `ruff check --select E9,F --target-version py310`、`compileall`、`pytest`、相對連結檢查皆通過，無新增警告。`requirements-dev.txt` 最低版升至 `>=0.17.2`，移除已失效的 0.16.10 延後項。Windows CI 於 PR 上驗收。
+
 ## 2026-10-24：vite 與 source-map-js 安全修補
 
 Dependabot #19–#21（vite，`pnpm-lock.yaml`，launch-editor 三筆，修補版 8.3.3）：vite 8.3.1 → 8.3.5，`package.json` 範圍同步為 `^8.3.5`；此舉同時涵蓋 Dependabot PR #14（8.3.1 → 8.3.3，保留開啟、不關閉）。`pnpm audit` 另列 postcss 的傳遞依賴 `source-map-js` 1.2.1（high，修補版 1.2.2），隨 lock 更新到 1.2.2，不新增 override。兩者都是真實安裝的 registry 套件，沒有 parent 自帶 bundle 的情形。
