@@ -115,7 +115,7 @@ def collect_new_commits(baseline: dict, repo_dir: Path, ref: str) -> list[dict]:
 def upstream_slug(repo_url: str) -> str | None:
     """`https://github.com/owner/name.git` -> `owner/name`, or None if not GitHub."""
     match = re.search(
-        r"github\.com[:/](?P<owner>[^/]+)/(?P<name>[^/]+?)(?:\.git)?$", repo_url
+        r"github\.com[:/](?P<owner>[^/]+)/(?P<name>[^/]+?)(?:\.git)?/?$", repo_url
     )
     return f"{match['owner']}/{match['name']}" if match else None
 

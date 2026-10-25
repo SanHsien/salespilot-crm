@@ -117,3 +117,14 @@ def test_upstream_slug(url, expected):
 def test_shipped_baseline_matches_the_documented_upstream():
     baseline = checker.load_baseline()
     assert checker.upstream_slug(baseline["repo"]) is not None
+
+
+def test_upstream_slug_tolerates_trailing_slash_and_dot_git() -> None:
+    for url in (
+        "https://github.com/owner/name",
+        "https://github.com/owner/name/",
+        "https://github.com/owner/name.git",
+        "https://github.com/owner/name.git/",
+        "git@github.com:owner/name.git",
+    ):
+        assert checker.upstream_slug(url) == "owner/name", url
