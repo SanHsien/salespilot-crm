@@ -10,6 +10,7 @@ import CallToAction from './components/CallToAction';
 import Footer from './components/Footer';
 import Loading from './components/Loading';
 import CookieConsent from './components/CookieConsent';
+import { scrollToHash } from './lib/scrollToHash';
 
 function App() {
     const [isLoading, setIsLoading] = useState(true);
@@ -21,6 +22,12 @@ function App() {
         }, 600);
         return () => clearTimeout(timer);
     }, []);
+
+    useEffect(() => {
+        if (!isLoading) {
+            scrollToHash(window.location.hash);
+        }
+    }, [isLoading]);
 
     if (isLoading) {
         return <Loading />;
