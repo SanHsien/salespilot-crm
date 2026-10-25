@@ -40,6 +40,8 @@ export const locales = {
         },
         socialProof: {
             heading: 'Trusted by over 500 companies',
+            quoteMarks: ['“', '”'],
+            roleSeparator: ', ',
             testimonial: {
                 quote: "After implementing SalesPilot, our sales team never misses a follow-up. Our closing rate increased by 40%.",
                 author: "Lin Zhi-Yuan",
@@ -205,6 +207,8 @@ export const locales = {
         },
         socialProof: {
             heading: '超過 500 家企業信賴 SalesPilot',
+            quoteMarks: ['「', '」'],
+            roleSeparator: '，',
             testimonial: {
                 quote: "導入 SalesPilot 後，我們的業務團隊不再遺漏任何跟進時機，成交率整整提升了 40%。",
                 author: "林志遠",

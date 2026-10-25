@@ -5,6 +5,8 @@ function SocialProof() {
     const { t } = useI18n();
     const { logos } = SOCIAL_PROOF; // Keep logos from data file
     const testimonial = t('socialProof.testimonial');
+    const [quoteOpen, quoteClose] = t('socialProof.quoteMarks');
+    const roleSeparator = t('socialProof.roleSeparator');
 
     return (
         <section className="social-proof" id="social-proof" aria-labelledby="social-proof-title">
@@ -24,7 +26,7 @@ function SocialProof() {
                 </div>
 
                 <blockquote className="social-proof__testimonial">
-                    <p className="social-proof__quote">「{testimonial?.quote || ''}」</p>
+                    <p className="social-proof__quote">{quoteOpen}{testimonial?.quote || ''}{quoteClose}</p>
                     <footer className="social-proof__author">
                         <div className="social-proof__avatar" aria-hidden="true">
                             {testimonial?.author?.charAt(0) || '◆'}
@@ -32,7 +34,7 @@ function SocialProof() {
                         <div>
                             <cite className="social-proof__name">{testimonial?.author || ''}</cite>
                             <span className="social-proof__role">
-                                {testimonial?.role ? `${testimonial.role}，${testimonial.company}` : ''}
+                                {testimonial?.role ? `${testimonial.role}${roleSeparator}${testimonial.company}` : ''}
                             </span>
                         </div>
                     </footer>
