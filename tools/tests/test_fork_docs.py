@@ -71,3 +71,17 @@ def test_baseline_matches_format() -> None:
     assert len(baseline["reviewed_through"]) == 40
     assert baseline["reviewed_pr_through"] >= 26
     assert baseline["reviewed_issue_through"] >= 0
+
+
+def test_links_with_titles_and_code_samples_do_not_false_fail(tmp_path: Path) -> None:
+    (tmp_path / "real.md").write_text("x", encoding="utf-8")
+    doc = tmp_path / "doc.md"
+    doc.write_text(
+        '[ok](real.md "a title") and [ok2](real.md \'t\')\n'
+        "inline `[no](missing-inline.md)` is code\n"
+        "```md\n[no](missing-fenced.md)\n```\n"
+        "[bad](gone.md)\n",
+        encoding="utf-8",
+    )
+    problems = check_links.check_document(doc)
+    assert len(problems) == 1 and problems[0].startswith("gone.md")

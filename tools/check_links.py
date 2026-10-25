@@ -17,6 +17,8 @@ ROOT = Path(__file__).resolve().parent.parent
 LINK_PATTERN = re.compile(r"\[[^\]]*\]\(([^)]+)\)")
 IMAGE_PATTERN = re.compile(r"!\[[^\]]*\]\(([^)]+)\)")
 HTML_SRC_PATTERN = re.compile(r"""(?is)<img[^>]+src=["']([^"']+)["']""")
+FENCE_PATTERN = re.compile(r"^[ \t]*(`{3,}|~{3,}).*?^[ \t]*\1[`~]*[ \t]*$", re.M | re.S)
+INLINE_CODE_PATTERN = re.compile(r"`[^`\n]*`")
 SKIP_PREFIXES = ("http://", "https://", "mailto:", "tel:", "#")
 SKIP_NAMES = {
     "upstream-review-report.md",
@@ -60,7 +62,12 @@ def iter_documents() -> list[Path]:
 
 
 def _missing_relative(path: Path, target: str) -> str | None:
-    target = target.strip().strip("<>")
+    target = target.strip()
+    if target.startswith("<") and ">" in target:
+        target = target[1:target.index(">")]
+    else:
+        # `[text](path "title")`: the destination ends at the first whitespace.
+        target = target.split(None, 1)[0] if target else target
     if not target or target.startswith(SKIP_PREFIXES):
         return None
     file_part = unquote(target.split("#", 1)[0])
@@ -79,6 +86,8 @@ def _missing_relative(path: Path, target: str) -> str | None:
 def check_document(path: Path) -> list[str]:
     problems: list[str] = []
     text = path.read_text(encoding="utf-8")
+    # Links shown as code samples are not links.
+    text = INLINE_CODE_PATTERN.sub("", FENCE_PATTERN.sub("", text))
     for pattern in (LINK_PATTERN, IMAGE_PATTERN, HTML_SRC_PATTERN):
         for match in pattern.finditer(text):
             missing = _missing_relative(path, match.group(1))
