@@ -11,7 +11,7 @@
 
 ## 🚀 Tech Stack
 
-- **React 18** + **Vite 6**
+- **React 18** + **Vite 8**
 - Vanilla CSS（CSS Custom Properties 設計系統）
 - Google Fonts（Inter + Noto Sans TC）
 

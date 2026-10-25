@@ -85,3 +85,20 @@ def test_links_with_titles_and_code_samples_do_not_false_fail(tmp_path: Path) ->
     )
     problems = check_links.check_document(doc)
     assert len(problems) == 1 and problems[0].startswith("gone.md")
+
+
+def test_documented_vite_major_matches_package_json() -> None:
+    import json
+    import re
+
+    declared = json.loads((ROOT / "package.json").read_text(encoding="utf-8"))
+    major = re.search(r"\d+", declared["devDependencies"]["vite"]).group(0)
+    stale = []
+    for name in ("README.md", "README.en.md", "AGENTS.md", "FORK.md", "docs/DEVELOPMENT.md"):
+        text = (ROOT / name).read_text(encoding="utf-8")
+        stale += [
+            f"{name}: Vite {found}"
+            for found in re.findall(r"Vite (\d+)", text, flags=re.IGNORECASE)
+            if found != major
+        ]
+    assert stale == []

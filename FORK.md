@@ -5,7 +5,7 @@
 
 ## 為什麼維護 fork
 
-- 本專案表面為 SalesPilot CRM 官網首頁（React 18 + Vite 6），核心定位為 Git Worktree 與 Agent 技能（`git-worktree-design`、`git-smart-commit`、`git-pr-description`、`skill-development`、`ui-ux-pro-max`）的實戰示範平台。
+- 本專案表面為 SalesPilot CRM 官網首頁（React 18 + Vite 8），核心定位為 Git Worktree 與 Agent 技能（`git-worktree-design`、`git-smart-commit`、`git-pr-description`、`skill-development`、`ui-ux-pro-max`）的實戰示範平台。
 - 採 Windows-first 維護：Windows 11 + PowerShell 是主要開發、除錯與完整驗收環境。
 - 公開入口維持繁體中文為主，英文鏡像放 [`README.en.md`](README.en.md)。
 - 建立可重現的 Windows 開發 gate、Windows CI job，以及逐筆審查的上游追蹤（涵蓋 commit、PR 與 issue 水位）。

@@ -5,7 +5,7 @@
 ## 架構
 
 ```text
-src/                           SalesPilot CRM 官網前端原始碼（React 18 + Vite 6）
+src/                           SalesPilot CRM 官網前端原始碼（React 18 + Vite 8）
   ├── components/              UI 元件庫（Navbar, Hero, Features, Pricing 等）
   ├── data/                    組態資料（文案、導覽、定價）
   └── index.css                全域樣式與 CSS 變數設計系統

@@ -11,12 +11,12 @@
 ## 🎯 專案定位與特色
 
 本專案具有**雙重核心定位**：
-1. **SalesPilot CRM 官網首頁**：基於 React 18 + Vite 6 打造之現代化業務管理平台首頁，具備深色主題、Glassmorphism 毛玻璃導覽列、微動畫、全響應式斷點與 A11y 支援。
+1. **SalesPilot CRM 官網首頁**：基於 React 18 + Vite 8 打造之現代化業務管理平台首頁，具備深色主題、Glassmorphism 毛玻璃導覽列、微動畫、全響應式斷點與 A11y 支援。
 2. **Git Worktree 代理多分支協作工作流**：內建 `.agent/skills/`（`git-worktree-design`、`git-smart-commit`、`git-pr-description`、`skill-development`、`ui-ux-pro-max`）與 `.agent/workflows/exec-worktree-spec.md`，提供 AI 代理在多個獨立 Worktree 下並行開發特性之標準流程。
 
 ## 🚀 技術棧
 
-- **前端框架**：React 18 + Vite 6
+- **前端框架**：React 18 + Vite 8
 - **樣式系統**：Vanilla CSS（CSS Custom Properties 變數系統）
 - **字型**：Google Fonts（Inter + Noto Sans TC）
 - **代理技能**：Python 3.10+（`ui-ux-pro-max` BM25 檢索與設計系統產生器）
