@@ -71,7 +71,7 @@ function Navbar() {
                         >
                             {locale === 'zh' ? 'EN' : '中'}
                         </button>
-                        <a href="#demo" className="btn btn--primary btn--sm navbar__cta">
+                        <a href="#demo" className="btn btn--primary btn--sm navbar__cta" onClick={() => setMenuOpen(false)}>
                             {t('nav.getStarted')}
                         </a>
                     </div>
