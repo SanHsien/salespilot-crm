@@ -26,7 +26,7 @@ const SOCIAL_ICONS = {
 
 function Footer() {
     const { t } = useI18n();
-    const { brand, social } = FOOTER_DATA;
+    const { brand, social, columns: columnLinks } = FOOTER_DATA;
     const footerData = t('footer');
     const columns = footerData.cols || [];
 
@@ -62,7 +62,7 @@ function Footer() {
                                 <ul className="footer__column-list">
                                     {col.links.map((link, j) => (
                                         <li key={j}>
-                                            <a href="#" className="footer__column-link">
+                                            <a href={columnLinks[i]?.links[j]?.href || '#'} className="footer__column-link">
                                                 {link}
                                             </a>
                                         </li>
