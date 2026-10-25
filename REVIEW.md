@@ -37,7 +37,7 @@ gh repo set-default --view
 | R-02 | P2 | 修復 `.agent/skills/ui-ux-pro-max/scripts/` 中 14 個 Ruff 語法與未定義/未使用變數警報 |
 | R-03 | P2 | 配置 `pnpm-workspace.yaml` 自動放行 esbuild 原生執行檔建置，確保 Windows 11 原生非互動式建置順暢 |
 | R-04 | P2 | 補齊根目錄 `LICENSE` 檔案（MIT License），載明 dean 與 SanHsien 著作權標記 |
-| R-05 | P2 | 建立 `FORK.md`、`NOTICE.md`、`SECURITY.md`、`AGENTS.md`、`CLAUDE.md`、`GEMINI.md`，明定對外邊界 |
+| R-05 | P2 | 建立 `FORK.md`、`NOTICE.md`、`SECURITY.md`、`AGENTS.md`，明定對外邊界（原建立的 `GEMINI.md` 已於 2804696 刪除、`CLAUDE.md` 已於歷史壓縮時移除，內容皆併入 `AGENTS.md`） |
 | R-06 | P3 | `README.md`（繁體中文主入口）與 `README.en.md`（英文鏡像）雙向互指，並標明 upstream 與雙重專案定位 |
 | R-07 | P2 | 建立 `tools/dev_check.ps1`、`tools/bootstrap_dev.ps1` 與 `tools/test_product.ps1` 規範 Windows 門禁 |
 | R-08 | P2 | 建立獨立維護測試目錄 `tools/tests/` 與獨立 `tools/pytest.ini`，配置合約測試 |
