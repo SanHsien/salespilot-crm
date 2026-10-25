@@ -48,6 +48,10 @@ Invoke-Step -Label "Check Markdown links" -Action {
     & $script:pythonExe tools\check_links.py
 }
 
+Invoke-Step -Label "Frontend tests (node --test)" -Action {
+    pnpm test
+}
+
 Invoke-Step -Label "Frontend Build (Vite)" -Action {
     pnpm build
 }

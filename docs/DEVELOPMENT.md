@@ -58,4 +58,5 @@ pwsh -NoProfile -File tools\test_product.ps1
 2. `ruff check --select E9,F` 檢查語法錯誤與 pyflakes 警報。
 3. `pytest` 執行維護契約測試。
 4. `check_links.py` 檢查所有維護文件的相對 Markdown 連結。
-5. `pnpm build` 驗證 Vite 前端生產環境構建。
+5. `pnpm test` 以 `node --test` 執行前端測試（`tests/`，元件經 Vite SSR 轉成 HTML 驗證，不加依賴）。
+6. `pnpm build` 驗證 Vite 前端生產環境構建。
