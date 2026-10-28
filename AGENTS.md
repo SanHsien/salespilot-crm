@@ -54,3 +54,7 @@ Baseline 代表「已審查」，不代表「全部已合併」。
 - **PR、push、release 一律指向 `SanHsien/salespilot-crm`。** 對上游 `deancourse/git-worktree-demo` 開 PR、push 或發 release，需要維護者在當次對話明確同意回貢；「fork 一份」「建開發環境」「比照其他 repo」都不是同意。
 - `gh` 在 fork clone 的預設 repo 可能是上游，每個 clone 先跑一次 `gh repo set-default SanHsien/salespilot-crm`。
 - 開 PR 仍明寫 `gh pr create --repo SanHsien/salespilot-crm --base <分支> --head <分支>`，並讀輸出的 URL，owner 必須是 `SanHsien`。
+
+## 路線圖
+
+- `ROADMAP.md` 是本 repo 後續工作的單一真相源。完成或新增工作時，在同一個 commit 更新它：做完的列刪掉、新工作加進去。不要在其他文件另列待辦。
