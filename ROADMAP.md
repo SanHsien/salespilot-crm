@@ -1,16 +1,16 @@
 # 路線圖
 
 > 本 repo 後續工作的單一真相源。做完一項，就在同一個 commit 刪掉那一列；新工作只加在這裡。
-> 現況段的數字是 2026-10-29 依 `main` `d36e37092d70` 查的快照，開工前先重查 GitHub。
+> 現況段的數字是 2026-10-30 依 `main` `ce3ba24` 查的快照，開工前先重查 GitHub。
 
 ## 現況
 
-SalesPilot CRM 官網首頁（React 18 + Vite 8）與 Git Worktree／Agent 技能示範，Windows-first 維護的 fork（上游 `deancourse/git-worktree-demo`，審查水位見 `tools/upstream_baseline.json`）。2026-10-29 快照：open PR 0；Dependabot 與 code scanning 告警皆 0；issues 已停用（屬設定，非缺陷，所以沒有 issue 可查）；`main` 上 CI、CodeQL、Dependency freshness、Upstream check 最近一次皆 success（Upstream check 綠＝上游無未審項目）；無 release。2026-10-26 深掃後已無未修缺陷，無障礙小項（英文 aria-label、role="list" 子節點語意）已補齊，剩下的是需維護者決定的文案與依賴新鮮度審查。
+SalesPilot CRM 官網首頁（React 18 + Vite 8）與 Git Worktree／Agent 技能示範，Windows-first 維護的 fork（上游 `deancourse/git-worktree-demo`，審查水位見 `tools/upstream_baseline.json`）。2026-10-30 快照：open PR 0；Dependabot 與 code scanning 告警皆 0；issues 已停用（屬設定，非缺陷，所以沒有 issue 可查）；`main` 上 CI、CodeQL、Upstream check 最近一次皆 success（Upstream check 綠＝上游無未審項目）；無 release。2026-10-26 深掃後已無未修缺陷，無障礙小項（英文 aria-label、role="list" 子節點語意）已補齊，2026-10-30 完成 Ruff 0.17.3 依賴延後審查，目前無待辦的依賴新鮮度項目，剩下的是需維護者決定的文案。
 
 ## 近期：可以直接動手
 | 項目 | 為什麼 | 驗收方式 | 建議執行者 | 證據 |
 | --- | --- | --- | --- | --- |
-| 審查高於 `deferredLatest` 的新 Ruff 版本 | `.github/dependency-deferrals.json` 的 `deferredLatest`（0.17.2）已被越過：2026-10-29 PyPI 已有 `ruff` 0.17.3（見 `gh issue view 1 --repo SanHsien/openshelf` 的新鮮度表）；本 repo `Dependency freshness` 最近一次跑在 2026-10-25，尚未比到新版。開工前先 `gh workflow run "Dependency freshness" --repo SanHsien/salespilot-crm` 確認 | 依 `docs/DECISIONS.md` 首則的方式在 Python 3.10–3.14 跑 `ruff`、`compileall`、`pytest`；更新 `.github/dependency-deferrals.json` 的 `deferredLatest` 並在 DECISIONS 補一則；workflow 轉綠；不為了清警報而抬 `requirements-dev.txt` 下限 | Claude Sonnet | `docs/DECISIONS.md`「Ruff 0.17.2 已審查」；`.github/dependency-deferrals.json` |
+| （目前無） | - | - | - | - |
 
 ## 中期：等條件成立再做
 | 項目 | 觸發條件 | 驗收方式 | 建議執行者 | 證據 |
