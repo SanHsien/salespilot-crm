@@ -38,7 +38,7 @@ function Hero() {
                         </a>
                     </div>
 
-                    <div className="hero__stats" role="list" aria-label="關鍵成效數據">
+                    <div className="hero__stats" role="list" aria-label={t('hero.statsAriaLabel')}>
                         {Array.isArray(stats) && stats.map((stat) => (
                             <div key={stat.label} className="hero__stat" role="listitem">
                                 <span className="hero__stat-value">{stat.value}</span>

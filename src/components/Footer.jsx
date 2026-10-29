@@ -35,12 +35,12 @@ function Footer() {
             <div className="container">
                 <div className="footer__top">
                     <div className="footer__brand">
-                        <a href="/" className="footer__logo" aria-label={`${brand.name} 首頁`}>
+                        <a href="/" className="footer__logo" aria-label={t('nav.homeLink')}>
                             <span className="footer__logo-icon" aria-hidden="true">◆</span>
                             {brand.name}
                         </a>
                         <p className="footer__brand-desc">{footerData.brandDesc}</p>
-                        <div className="footer__social" role="list" aria-label="社群媒體連結">
+                        <div className="footer__social" role="list" aria-label={t('footer.socialAriaLabel')}>
                             {social.map((s) => (
                                 <a
                                     key={s.icon}

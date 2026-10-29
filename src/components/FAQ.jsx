@@ -7,7 +7,7 @@ const FAQItem = ({ id, question, answer }) => {
     const answerId = `faq-a-${id}`;
 
     return (
-        <div className={`faq-item ${isOpen ? 'open' : ''}`}>
+        <div className={`faq-item ${isOpen ? 'open' : ''}`} role="listitem">
             <button
                 type="button"
                 id={questionId}

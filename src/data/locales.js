@@ -8,12 +8,18 @@ export const locales = {
             faq: 'FAQ',
             login: 'Login',
             getStarted: 'Get Started',
+            toggleMenu: 'Toggle navigation menu',
+            mainNav: 'Main navigation',
+            homeLink: 'SalesPilot Home',
+            switchToDark: 'Switch to dark mode',
+            switchToLight: 'Switch to light mode',
         },
         hero: {
             title: 'Boost Your Sales Performance\nMake Every Deal Clear',
             subtitle: 'Integrate customer tracking, smart alerts, and automated workflows to help your sales team focus on closing, not chores.',
             cta: 'Start Free Trial',
             secondaryCta: 'View Pricing',
+            statsAriaLabel: 'Key performance metrics',
             stats: [
                 { value: '37%', label: 'Increase in closing rate' },
                 { value: '2.4x', label: 'Sales efficiency boost' },
@@ -40,6 +46,7 @@ export const locales = {
         },
         socialProof: {
             heading: 'Trusted by over 500 companies',
+            logosAriaLabel: 'Client companies',
             quoteMarks: ['“', '”'],
             roleSeparator: ', ',
             testimonial: {
@@ -151,6 +158,7 @@ export const locales = {
         footer: {
             brandDesc: 'Your sales growth engine. Master your pipeline, boost closing rates.',
             copyright: `© ${new Date().getFullYear()} SalesPilot. All rights reserved.`,
+            socialAriaLabel: 'Social media links',
             cols: [
                 { title: 'Product', links: ['Features', 'Pricing', 'Changelog', 'API Docs', 'System Status'] },
                 { title: 'Resources', links: ['Tutorials', 'Blog', 'Case Studies', 'Webinars', 'Help Center'] },
@@ -175,12 +183,18 @@ export const locales = {
             faq: '常見問題',
             login: '登入',
             getStarted: '免費開始',
+            toggleMenu: '切換導覽選單',
+            mainNav: '主要導覽',
+            homeLink: 'SalesPilot 首頁',
+            switchToDark: '切換至深色模式',
+            switchToLight: '切換至淺色模式',
         },
         hero: {
             title: '讓每一條銷售線\n都清晰可見',
             subtitle: '整合客戶追蹤、智慧提醒與自動化流程，幫助你的業務團隊專注在成交，而非瑣事。',
             cta: '免費開始',
             secondaryCta: '查看方案',
+            statsAriaLabel: '關鍵成效數據',
             stats: [
                 { value: '37%', label: '平均成交率提升' },
                 { value: '2.4x', label: '業務效率倍增' },
@@ -207,6 +221,7 @@ export const locales = {
         },
         socialProof: {
             heading: '超過 500 家企業信賴 SalesPilot',
+            logosAriaLabel: '客戶企業列表',
             quoteMarks: ['「', '」'],
             roleSeparator: '，',
             testimonial: {
@@ -318,6 +333,7 @@ export const locales = {
         footer: {
             brandDesc: '你的業務成長引擎。助你掌控銷售管線，提升成交率。',
             copyright: `© ${new Date().getFullYear()} SalesPilot. All rights reserved.`,
+            socialAriaLabel: '社群媒體連結',
             cols: [
                 { title: '產品', links: ['功能總覽', '方案價格', '產品更新日誌', 'API 文件', '系統狀態'] },
                 { title: '資源', links: ['使用教學', '部落格', '客戶案例', '網路研討會', '幫助中心'] },

@@ -22,7 +22,7 @@ function Navbar() {
     return (
         <header className="navbar" role="banner">
             <div className="navbar__inner container">
-                <a href="/" className="navbar__brand" aria-label={`${BRAND.name} 首頁`}>
+                <a href="/" className="navbar__brand" aria-label={t('nav.homeLink')}>
                     <span className="navbar__logo" aria-hidden="true">◆</span>
                     <span className="navbar__brand-name">{BRAND.name}</span>
                 </a>
@@ -32,7 +32,7 @@ function Navbar() {
                     onClick={() => setMenuOpen(!menuOpen)}
                     aria-expanded={menuOpen}
                     aria-controls="nav-menu"
-                    aria-label="切換導覽選單"
+                    aria-label={t('nav.toggleMenu')}
                 >
                     <span className="navbar__toggle-bar" />
                     <span className="navbar__toggle-bar" />
@@ -43,7 +43,7 @@ function Navbar() {
                     id="nav-menu"
                     className={`navbar__nav ${menuOpen ? 'navbar__nav--open' : ''}`}
                     role="navigation"
-                    aria-label="主要導覽"
+                    aria-label={t('nav.mainNav')}
                 >
                     <ul className="navbar__list">
                         {NAV_LINKS.map((link) => (
@@ -58,7 +58,7 @@ function Navbar() {
                         <button
                             className="btn-icon"
                             onClick={toggleTheme}
-                            aria-label={theme === 'light' ? '切換至深色模式' : '切換至淺色模式'}
+                            aria-label={theme === 'light' ? t('nav.switchToDark') : t('nav.switchToLight')}
                             title={theme === 'light' ? 'Dark Mode' : 'Light Mode'}
                         >
                             {theme === 'light' ? '🌙' : '☀️'}

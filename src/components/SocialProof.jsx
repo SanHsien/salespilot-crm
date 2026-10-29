@@ -15,7 +15,7 @@ function SocialProof() {
                     {t('socialProof.heading')}
                 </p>
 
-                <div className="social-proof__logos" role="list" aria-label="客戶企業列表">
+                <div className="social-proof__logos" role="list" aria-label={t('socialProof.logosAriaLabel')}>
                     {logos.map((logo) => (
                         <div key={logo.id} className="social-proof__logo" role="listitem">
                             <div className="social-proof__logo-placeholder" aria-label={logo.name}>

@@ -5,13 +5,11 @@
 
 ## 現況
 
-SalesPilot CRM 官網首頁（React 18 + Vite 8）與 Git Worktree／Agent 技能示範，Windows-first 維護的 fork（上游 `deancourse/git-worktree-demo`，審查水位見 `tools/upstream_baseline.json`）。2026-10-29 快照：open PR 0；Dependabot 與 code scanning 告警皆 0；issues 已停用（屬設定，非缺陷，所以沒有 issue 可查）；`main` 上 CI、CodeQL、Dependency freshness、Upstream check 最近一次皆 success（Upstream check 綠＝上游無未審項目）；無 release。2026-10-26 深掃後已無未修缺陷，剩下的是無障礙小項與需維護者決定的文案。
+SalesPilot CRM 官網首頁（React 18 + Vite 8）與 Git Worktree／Agent 技能示範，Windows-first 維護的 fork（上游 `deancourse/git-worktree-demo`，審查水位見 `tools/upstream_baseline.json`）。2026-10-29 快照：open PR 0；Dependabot 與 code scanning 告警皆 0；issues 已停用（屬設定，非缺陷，所以沒有 issue 可查）；`main` 上 CI、CodeQL、Dependency freshness、Upstream check 最近一次皆 success（Upstream check 綠＝上游無未審項目）；無 release。2026-10-26 深掃後已無未修缺陷，無障礙小項（英文 aria-label、role="list" 子節點語意）已補齊，剩下的是需維護者決定的文案與依賴新鮮度審查。
 
 ## 近期：可以直接動手
 | 項目 | 為什麼 | 驗收方式 | 建議執行者 | 證據 |
 | --- | --- | --- | --- | --- |
-| 英文版的 aria-label 改走 locale 資料，不再寫死中文 | 英文版使用者的螢幕閱讀器會讀到中文標籤 | `src/components/Navbar.jsx:35,46`、`Footer.jsx:43`、`Hero.jsx:41`、`SocialProof.jsx:18` 的 aria-label 全部取自 `src/data/locales.js`；新增 SSR 測試：英文版輸出不含 CJK 的 aria-label，中文版維持原文；`pwsh -NoProfile -File tools\dev_check.ps1` 綠 | Claude Sonnet | 上述 `檔案:行號`；2026-10-26 深掃「刻意不修」第二項（同類測試已有先例：見 `git show 21346ef`） |
-| `role="list"` 容器的子節點補 `listitem` 語意（或改用 `ul/li`） | 只標容器、不標子節點的 ARIA list 在部分讀屏器不被當成清單 | `FAQ.jsx:53`、`Features.jsx:27`、`Pricing.jsx:66`、`Pricing.jsx:88`、`UseCases.jsx:37`（這兩處本來就是 `<ul role="list">`，預期只需確認、不需改）、`Footer.jsx:43`、`Hero.jsx:41`、`SocialProof.jsx:18` 逐一檢查；SSR 測試斷言每個 `role="list"` 的直接子節點是 `li` 或帶 `role="listitem"`；`dev_check.ps1` 綠且 `pnpm build` 成功 | Claude Sonnet | 同左；`grep -rn 'role="list"' src` |
 | 審查高於 `deferredLatest` 的新 Ruff 版本 | `.github/dependency-deferrals.json` 的 `deferredLatest`（0.17.2）已被越過：2026-10-29 PyPI 已有 `ruff` 0.17.3（見 `gh issue view 1 --repo SanHsien/openshelf` 的新鮮度表）；本 repo `Dependency freshness` 最近一次跑在 2026-10-25，尚未比到新版。開工前先 `gh workflow run "Dependency freshness" --repo SanHsien/salespilot-crm` 確認 | 依 `docs/DECISIONS.md` 首則的方式在 Python 3.10–3.14 跑 `ruff`、`compileall`、`pytest`；更新 `.github/dependency-deferrals.json` 的 `deferredLatest` 並在 DECISIONS 補一則；workflow 轉綠；不為了清警報而抬 `requirements-dev.txt` 下限 | Claude Sonnet | `docs/DECISIONS.md`「Ruff 0.17.2 已審查」；`.github/dependency-deferrals.json` |
 
 ## 中期：等條件成立再做
