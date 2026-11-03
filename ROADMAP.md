@@ -5,7 +5,7 @@
 
 ## 現況
 
-SalesPilot CRM 官網首頁（React 18 + Vite 8）與 Git Worktree／Agent 技能示範，Windows-first 維護的 fork（上游 `deancourse/git-worktree-demo`，審查水位見 `tools/upstream_baseline.json`）。2026-10-30 快照：open PR 0；Dependabot 與 code scanning 告警皆 0；issues 已停用（屬設定，非缺陷，所以沒有 issue 可查）；`main` 上 CI、CodeQL、Upstream check 最近一次皆 success（Upstream check 綠＝上游無未審項目）；無 release。2026-10-26 深掃後已無未修缺陷，無障礙小項（英文 aria-label、role="list" 子節點語意）已補齊，2026-10-30 完成 Ruff 0.17.3 依賴延後審查，目前無待辦的依賴新鮮度項目，剩下的是需維護者決定的文案。
+SalesPilot CRM 官網首頁（React 19 + Vite 8）與 Git Worktree／Agent 技能示範，Windows-first 維護的 fork（上游 `deancourse/git-worktree-demo`，審查水位見 `tools/upstream_baseline.json`）。2026-10-30 快照：open PR 0；Dependabot 與 code scanning 告警皆 0；issues 已停用（屬設定，非缺陷，所以沒有 issue 可查）；`main` 上 CI、CodeQL、Upstream check 最近一次皆 success（Upstream check 綠＝上游無未審項目）；無 release。2026-10-26 深掃後已無未修缺陷，無障礙小項（英文 aria-label、role="list" 子節點語意）已補齊，2026-10-30 完成 Ruff 0.17.3 依賴延後審查，目前無待辦的依賴新鮮度項目，剩下的是需維護者決定的文案。
 
 ## 近期：可以直接動手
 | 項目 | 為什麼 | 驗收方式 | 建議執行者 | 證據 |
