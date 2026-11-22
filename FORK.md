@@ -33,6 +33,7 @@
 | `.github/workflows/codeql.yml` | CodeQL 安全掃描工作流程（JavaScript + Python） |
 | `docs/DECISIONS.md`、`docs/UPSTREAM.md`、`docs/DEVELOPMENT.md` | fork 維護文件 |
 | `REVIEW.md` | 全庫風險快照 |
+| `.agent/skills/ui-ux-pro-max/SKILL.md`、`.agent/skills/skill-development/SKILL.md` | 上游檔：指令路徑補上 `.agent/` 前綴、刪掉指向不存在兄弟 skill 的段落（見 `docs/DECISIONS.md` 2026-11-22） |
 
 核心程式在 `src/`，代理技能在 `.agent/`，以上游為準。
 

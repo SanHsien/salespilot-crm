@@ -1,5 +1,13 @@
 # 維護決策
 
+## 2026-11-22：修正 `.agent/skills/` 兩支技能裡解析不到的路徑
+
+**問題**（2026-11-22 prompt audit，兩則都已實查）：`ui-ux-pro-max/SKILL.md` 的 12 條指令寫 `python3 skills/ui-ux-pro-max/scripts/search.py`，但本 repo 根目錄沒有 `skills/`，腳本在 `.agent/skills/ui-ux-pro-max/scripts/search.py`。`skill-development/SKILL.md` 的「Study These Skills」指向 `../hook-development/` 等 6 個兄弟 skill，`.agent/skills/` 裡一個都沒有（這段是從 plugin-dev 複製來的）。
+
+**決定**：12 條指令改成 `.agent/skills/ui-ux-pro-max/...`（已從 repo 根目錄實跑 `search.py` 確認可執行）；刪掉「Study These Skills」整段，不新建 skill、也不改指到現有的四支（現有的是 git 工作流技能，不是那段要示範的 plugin 寫法）。「Reference Files」指向的 `references/skill-creator-original.md` 存在，保留。
+
+**刻意不做**：兩檔是上游檔，上游 `deancourse/git-worktree-demo` 有相同錯誤；回貢需維護者當次對話同意，本次不回貢。
+
 ## 2026-10-30：Ruff 0.17.3 已審查，記錄延後、不提高下限
 
 依賴新鮮度在 `main` 轉紅：PyPI 推出 Ruff 0.17.3，已越過 0.17.2 延後審查，延後自動失效。依 2026-10-24 的紀錄另開一筆單獨審查：Windows、Python 3.10–3.14 以 0.17.3 跑 `ruff check --select E9,F`、`compileall`、`pytest`（26 passed）皆通過，且現有 `ruff>=0.16.9` 範圍本來就允許安裝 0.17.3。結論：`requirements-dev.txt` 維持 `>=0.16.9`，不提高下限（下限是相容性承諾，不拿來消除警報）；在 `.github/dependency-deferrals.json` 將 ruff 的 `deferredLatest` 更新為 `0.17.3` 並寫明理由。下一個 Ruff 版本再單獨審查。

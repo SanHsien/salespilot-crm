@@ -603,16 +603,6 @@ Good for: Complex domains with validation utilities
 
 ## Additional Resources
 
-### Study These Skills
-
-Plugin-dev's skills demonstrate best practices:
-- `../hook-development/` - Progressive disclosure, utilities
-- `../agent-development/` - AI-assisted creation, references
-- `../mcp-integration/` - Comprehensive references
-- `../plugin-settings/` - Real-world examples
-- `../command-development/` - Clear critical concepts
-- `../plugin-structure/` - Good organization
-
 ### Reference Files
 
 For complete skill-creator methodology:
